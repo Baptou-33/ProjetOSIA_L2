@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Classement RMSE public</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 30px auto;
+            min-width: 600px;
+        }
+
+        th, td {
+            border: 1px solid #cccccc;
+            padding: 10px 15px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Classement des modèles</h1>
+
+    <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Classement</th>
+      <th>fichier</th>
+      <th>RMSE public</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>BA_prediction_RL.parquet</td>
+      <td>3.2852</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>BA_prediction_quart_heure.parquet</td>
+      <td>4.8022</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>senoussi_naive_mean.parquet</td>
+      <td>4.8225</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>The_velo78.parquet</td>
+      <td>4.8225</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>history_toulouse_naive_Savannah_Tessa.parquet</td>
+      <td>4.8225</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>eugab_naive.parquet</td>
+      <td>4.8225</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>yanis_naive_mean.parquet</td>
+      <td>4.8225</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>sa.parquet</td>
+      <td>4.8225</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>history_toulouse_naive_HAD_VER.parquet</td>
+      <td>4.8225</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>history_toulouse_naivemed_TurboTurtles.parquet</td>
+      <td>5.1416</td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>

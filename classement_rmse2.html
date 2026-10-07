@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Classement RMSE public</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 30px auto;
+            min-width: 600px;
+        }
+
+        th, td {
+            border: 1px solid #cccccc;
+            padding: 10px 15px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Classement des modèles</h1>
+
+    <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Classement</th>
+      <th>fichier</th>
+      <th>RMSE public</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>BA_prediction_103_RL.parquet</td>
+      <td>3.2593</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>BA_prediction_102_RL.parquet</td>
+      <td>3.2594</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>BA_prediction_104_RL.parquet</td>
+      <td>3.2615</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>BA_prediction_101_RL.parquet</td>
+      <td>3.2696</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>BA_prediction_100_RL.parquet</td>
+      <td>3.2852</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>history_toulouse_beyly.parquet</td>
+      <td>3.4039</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>BA_prediction_3_quart_heure.parquet</td>
+      <td>4.8022</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>BA_prediction_2_horaire.parquet</td>
+      <td>4.8189</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>history_toulouse_naive.parquet</td>
+      <td>4.8225</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>BA_prediction_1_naive.parquet</td>
+      <td>4.8225</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>BA_prediction_4_quart_heure_semaine.parquet</td>
+      <td>4.9670</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>BA_prediction_5_quart_heure_semaine_mois.parquet</td>
+      <td>5.5146</td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>
