@@ -1,4 +1,4 @@
-# Temps d'execution lors d'un from Donnees_et_RMSE import * : 10s au CREMI
+# Temps d'execution lors d'un from Donnees_et_RMSE import * : 16 à 21s au CREMI
 # Importation des bibliothèques -----------------------------------------------------------------------------------------------------------
 import pandas as pd
 import numpy as np
@@ -7,12 +7,12 @@ import numpy as np
 
 # Importation des documents de données temporelles et de test -----------------------------------------------------------------------------
 history_toulouse_train = pd.read_parquet("history_toulouse_train.parquet") # Données temporelles (Index 1 : 'station', Index 2 : 'commit_at', Colonnes : 'bikes' et 'stands')
-history_toulouse_test = pd.read_parquet("history_toulouse_test.parquet") # A compléter (Index 1 : 'station', Index 2 : 'commit_at', Colonnes : 'bikes_+15min' à 'bikes_+120min')
 stations_toulouse = pd.read_parquet("stations_toulouse.parquet") # Données géographiques (Colonnes : 'station', 'longitude', 'latitude', 'station_id')
+history_toulouse_test = pd.read_parquet("history_toulouse_test.parquet") # A compléter (Index 1 : 'station', Index 2 : 'commit_at', Colonnes : 'bikes_+15min' à 'bikes_+120min')
 
 
 
-# Variables utiles ------------------------------------------------------------------------------------------------------------------------
+# Initialisation ---------------------------------------------------------------------------------------------------------------------------
 # On associe chaque nom de colonne à une valeur numérique
 decalage = {
     "bikes_+15min": 15,
@@ -25,6 +25,12 @@ decalage = {
     "bikes_+120min": 120,
 }
 
+# On s'assure que history_toulouse_test soit vide pour détecter les erreures plus facilement
+history_toulouse_test = pd.DataFrame(
+    np.nan,
+    index=history_toulouse_test.index,
+    columns=history_toulouse_test.columns
+)
 
 
 
