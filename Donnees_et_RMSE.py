@@ -1,4 +1,4 @@
-# Temps d'execution lors d'un from Donnees_et_RMSE import * : 16 à 21s au CREMI
+# Temps d'execution lors d'un from Donnees_et_RMSE import * : 16 à 81s au CREMI
 # Importation des bibliothèques -----------------------------------------------------------------------------------------------------------
 import pandas as pd
 import numpy as np
