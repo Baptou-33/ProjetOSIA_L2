@@ -89,3 +89,23 @@ def rmse_calcul(rendu, validation):
 # Création d'un dataset de test et d'un dataset de validation pour évaluer sa performance
 history_toulouse_apprentissage = ensemble_apprentissage(history_toulouse_train)
 history_toulouse_validation = ensemble_validation(history_toulouse_train)
+
+# On créé un dataframe vide dans lequel écrire
+history_toulouse_test_validation = history_toulouse_validation.copy()
+history_toulouse_test_validation[:] = np.nan
+
+
+# Fonction globale ------------------------------------------------------------------------------------------------------------------------
+def RMSE_et_predictions(modele_prevision, nom):
+	# --- On entraine sur l'ensemble de validation et on fait une prédiction sur les dernières valeurs du train pour calculer le score RMSE perso ---
+	# On prédit avec history_toulouse_apprentissage
+	history_toulouse_prediction_validation = modele_prevision(history_toulouse_apprentissage, history_toulouse_test_validation)
+	
+	# Calcul du score RMSE
+	rmse = rmse_calcul(history_toulouse_prediction_validation, history_toulouse_validation)
+	
+	# --- Puis on ré-entraine sur TOUTES les données fournies pour faires les vraies prédictions ---
+	history_toulouse_prediction = modele_prevision(history_toulouse_train, history_toulouse_test)
+	
+	history_toulouse_prediction.to_parquet(f"{nom}.parquet", index=True)
+	return rmse, history_toulouse_prediction
