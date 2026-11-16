@@ -6,3 +6,5 @@ venv/
 .env
 .DS_Store
 history_toulouse_train.parquet
+Data/
+rmse_comme_le_prof.ipynb
